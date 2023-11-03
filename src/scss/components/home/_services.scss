@@ -1,0 +1,70 @@
+.services {
+    width: 100%;
+
+    .title {
+        @include title();
+    }
+
+    .services__carts {
+        width: 100%;
+        min-height: 620px;
+        padding: 50px 0;
+        background: url("../images/home/services/bg.webp") no-repeat center;
+        background-size: cover;
+
+        .carts {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 92px;
+            flex-wrap: wrap;
+
+            .cart {
+                width: 388px;
+                height: 491px;
+                flex-shrink: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                border-radius: 50px;
+                background: #FFF;
+                box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.05);
+
+                .image {
+                    border-radius: 50px;
+                    overflow: hidden;
+                    min-height: 259px;
+                }
+
+                h1 {
+                    color: $darkblue;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    letter-spacing: 1.3px;
+                    text-align: center;
+                }
+
+                p {
+                    color: #000;
+                    text-align: center;
+                    font-family: Roboto;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: 24px;
+                    text-align: center;
+                    padding: 0 30px;
+                    margin: 14px 0 42px 0;
+                }
+
+                button {
+                    @include button();
+                }
+            }
+        }
+    }
+}

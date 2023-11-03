@@ -1,0 +1,27 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    width: 100%;
+    min-height: 1000px;
+    background: url("../images/main/bg.webp"),
+        rgba(211, 211, 211, 0.651) 50% / cover no-repeat;
+}
+
+@import "./components/navbar";
+@import "./components/media-navbar";
+@import "./components/main-slider";
+@import "./components/home/producs";
+@import "./components/home/services";
+@import "./components/home/about-company";
+@import "./components/home/news";
+@import "./components/home/partners";
+@import "./components/footer";

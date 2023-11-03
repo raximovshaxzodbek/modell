@@ -1,0 +1,44 @@
+section.partners {
+    width: 100%;
+    min-height: 400px;
+    margin: 80px 0;
+
+    .title {
+        @include title();
+    }
+
+    .partors__slider {
+        margin: 50px 0;
+
+        .partersSwiper {
+            width: 90%;
+            height: 400px;
+            margin: 0 auto;
+
+            .swiper-slide {
+                border-radius: 30px;
+                border: 1px solid #ECECEC;
+                background: #FFF;
+                min-height: 130px !important;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                width: 50px;
+                height: 50px;
+                flex-shrink: 0;
+
+                border-radius: 25px;
+                background: linear-gradient(180deg, #0D4C93 0%, #00C9C9 100%);
+
+                &::after {
+                    font-size: 25px;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

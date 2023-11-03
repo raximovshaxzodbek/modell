@@ -1,0 +1,231 @@
+@import "./templates";
+
+nav.media-navbar {
+    position: relative;
+    display: none;
+
+    @media screen and (max-width: 768px) {
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+        padding: 20px 0 20px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .brand {
+            img {
+                width: 200px;
+                height: 58px;
+                flex-shrink: 0;
+            }
+        }
+
+        .right {
+            display: flex;
+            gap: 10px;
+
+            .location,
+            .phone,
+            .search {
+                width: 40px !important;
+                height: 40px !important;
+                @include nav-icon_template();
+                cursor: pointer;
+                font-size: 20px;
+                transition-duration: .3s;
+
+                &:hover {
+                    background-color: #00C9C9;
+                    color: #F2F2F2;
+                }
+            }
+
+            .languages {
+                position: relative;
+                height: 40px;
+
+                &:hover {
+                    .active__language {
+                        border-radius: 12px 12px 0 0;
+                    }
+
+                    .languages__group {
+                        opacity: 1;
+                    }
+                }
+
+                .active__language {
+                    width: 80px;
+                    height: 40px !important;
+                    flex-shrink: 0;
+                    transition-duration: .3s;
+
+
+                    background-color: #fff;
+                    box-shadow: 0 0 3px 2px #3535359c;
+                    border-radius: 12px;
+
+                    .lang {
+                        width: 80px !important;
+                        height: 40px !important;
+                        @include lang();
+                        border-radius: 12px 12px 0 0;
+                    }
+                }
+
+                .languages__group {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 80px;
+                    z-index: 1;
+                    opacity: 0;
+                    transition-duration: .6s;
+
+                    border-radius: 0 0 12px 12px;
+                    box-shadow: 0 1px 5px 1px #353535;
+                    background-color: #fff;
+
+                    .lang {
+                        width: 80px !important;
+                        height: 40px !important;
+                        @include lang();
+                        border-radius: 12px;
+                    }
+                }
+            }
+
+            .bars {
+                height: 40px !important;
+                width: 40px !important;
+                font-size: 20px !important;
+                @include nav-icon_template();
+                cursor: pointer;
+                transition-duration: .3s;
+
+                &:hover {
+                    background-color: #00C9C9;
+                    color: #F2F2F2;
+                }
+            }
+        }
+
+        .menu {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            right: -100%;
+            height: 100vh;
+            overflow-y: auto;
+            transition-duration: .3s;
+            background-color: #fff;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            .xmark {
+                width: 40px !important;
+                height: 40px !important;
+                position: absolute;
+                top: 30px;
+                right: 30px;
+                @include nav-icon_template();
+                background-color: $darkblue;
+                color: #fff;
+                cursor: pointer;
+                transition-duration: .3s;
+
+                &:hover {
+                    background-color: #00C9C9;
+                }
+            }
+
+            ul {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+
+                li {
+                    width: 100%;
+                    height: 40px;
+                    background-color: $darkblue;
+                    text-align: center;
+                    transition-duration: .3s;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    &:hover {
+                        background-color: #00C9C9;
+                    }
+
+                    a {
+                        color: #fff;
+                    }
+                }
+            }
+
+            .location__search-group {
+                display: none;
+            }
+        }
+    }
+
+    @media screen and (max-width: 568px) {
+        width: 98%;
+
+        .brand {
+            img {
+                width: 120px;
+                height: auto;
+            }
+        }
+
+        .location,
+        .search,
+        .phone,
+        .bars {
+            width: 25px !important;
+            height: 25px !important;
+            font-size: 15px !important;
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+
+        .right {
+
+            .location,
+            .search {
+                display: none;
+            }
+        }
+
+        .menu {
+            .xmark {
+                top: 20px;
+                right: 10px;
+            }
+
+            .location__search-group {
+                width: 100%;
+                height: 50px;
+                display: flex !important;
+                background-color: $darkblue;
+                justify-content: center;
+                gap: 20px;
+
+                .location,
+                .search {
+                    width: 30px;
+                    height: 30px;
+                    font-size: 15px;
+                    @include nav-icon_template();
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,151 @@
+$darkblue: #0D4C93;
+$lightblue: #00C9C9;
+
+@mixin nav-icon_template {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 25px;
+    background: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $darkblue;
+    font-size: 25px;
+
+    @media (min-width: 768px) and (max-width: 992px) {
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+    }
+
+    @media (min-width: 992px) and (max-width: 1200px) {
+        width: 40px;
+        height: 40px;
+        font-size: 17px;
+    }
+}
+
+@mixin nav-paragraph {
+    color: #5A5A5A;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.4px;
+
+    @media (min-width: 768px) and (max-width: 992px) {
+        font-size: 13px;
+    }
+
+    @media (min-width: 992px) and (max-width: 1200px) {
+        font-size: 14px;
+    }
+}
+
+@mixin lang {
+    width: 135px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 25px;
+    cursor: pointer;
+    transition-duration: .3s;
+
+    img {
+        width: 30px;
+        border-radius: 50%;
+    }
+
+    &:hover {
+        background-color: $lightblue;
+
+        p {
+            color: #F2F2F2;
+        }
+    }
+
+    p {
+        text-align: center;
+        font-family: Roboto;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        color: $darkblue;
+        transition-duration: .3s;
+    }
+
+    @media (min-width: 768px) and (max-width: 992px) {
+        width: 100px;
+        height: 30px;
+        font-size: 14px;
+        border-radius: 10px;
+
+        img {
+            width: 20px;
+        }
+    }
+
+    @media (min-width: 992px) and (max-width: 1200px) {
+        width: 130px;
+        height: 40px;
+        font-size: 16px;
+        border-radius: 12px;
+
+        img {
+            width: 30px;
+        }
+    }
+}
+
+@mixin button {
+    width: 270px;
+    height: 70px;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border: none;
+    outline: none;
+    transition-duration: .3s;
+
+
+    border-radius: 35px;
+    opacity: 0.9;
+    background: linear-gradient(90deg, $darkblue 0%, $lightblue 100%);
+    cursor: pointer;
+
+    &:hover {
+        border: 1px solid $darkblue;
+        color: $darkblue;
+        background: transparent;
+    }
+
+    @media (min-width: 768px) and (max-width: 992px) {
+        width: 335px;
+        height: 60px;
+        font-size: 18px;
+        line-height: normal;
+    }
+
+    @media screen and (max-width: 400px) {
+        width: 335px;
+        height: 60px;
+        font-size: 20px;
+        line-height: normal;
+    }
+}
+
+@mixin title {
+    color: $darkblue;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+}
